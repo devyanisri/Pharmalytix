@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{background-image: url("https://www.unite.ai/wp-content/uploads/2022/12/biotech.jpg");}
+    </style>
+  <meta charset="UTF-8">
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<title>Sentiment Analysis of Drug Reviews</title>
+</head>
+<body >
+
+  <nav class="navbar navbar-expand-lg " style="background-color:deeppink ;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/" style="color:white;">Pharmalytix</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/" style="color: greenyellow;">Home</a>
+          <a class="nav-link"  style="color: greenyellow;" href="/search">Recommendation</a>
+          
+          <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 210px;">
+              About
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/TSA">Time Series Analysis</a>
+              <a class="dropdown-item" href="/Sentiment">Sentiment Analysis</a>
+              <a class="dropdown-item" href="/Recommend">Recommendation System</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </nav>
+
+  
+        <img src="{{url_for('static',filename='r1.jpg')}} ">
+      <h1 class="display-4" style="color: cyan;">Recommendation Engine</h1>
+      <p style="color: white;">A recommendation system is a type of software application or algorithm that analyzes data on a user's behavior, preferences, and interests to suggest items that the user might like or find useful. These items can include products, services, content, or even other users.
+
+        Recommendation systems use a variety of techniques, including collaborative filtering, content-based filtering, and hybrid approaches, to make recommendations to users. Collaborative filtering analyzes a user's past behavior and preferences to find other users with similar interests and recommend items they have liked. Content-based filtering uses information about the properties of items to recommend other items with similar attributes. Hybrid approaches combine these techniques to create more accurate and diverse recommendations.</p>
+        <p style="color:white">for purpose of our project we used content based filtering </p>
+        <h5 style="color:chartreuse"> Principle behind recommendation system</h5>
+        <img src="{{url_for('static',filename='cosine.jpg')}}" style="height: 10%;">
+
+	<p style="color: white;"> Distances are used in recommendation systems to measure the similarity or dissimilarity between items, users, or other entities. By comparing the distances between items, the recommendation system can identify similar items and make personalized recommendations to users. Different distance measures, such as Euclidean distance, Manhattan distance, cosine distance, Jaccard distance, and Pearson correlation coefficient, can be used depending on the type of recommendation system and the data being analyzed. By using distances in recommendation systems, the system can provide more accurate and relevant recommendations to users, leading to an improved user experience and higher engagement.</p>
+
+        <h5 style="color:chartreuse"> Data source and model implementation</h5>
+        <p style="color: white;"> we will us kaggle dataset collected using Kaggle API.
+
+            https://www.kaggle.com/datasets/thedevastator/drug-performance-evaluation
+            We constructed two recommendation system 
+Suggest drug based on condition for which effectiveness, ease of use, and patient satisfaction scores.
+Same columns were used to recommend conditions based on drugs.
+The principle behind it to calculate cosine distance between data points and 5 elements with least cosine distance were output
+We groupby and sorted them and took top 5 values.Using Flask we constructed our website
+
+In App.py we imported dataset and defined methods for routing through the website which calls the various html pages .
+
+Condition and drug is variable for two methods .
+Results page uses binding to post the recommended values
+</p>
+
+       
+            <img src="{{url_for('static',filename='search.jpg')}}" style="height: 40%;width: 40%;">
+            <h2 class="display-4" style="color: chartreuse;">Check out cool Recommendation System!!!</h2>
+            
+            <hr class="my-4">
+            
+            <p class="lead">
+              <a class="btn btn-info btn-lg" href="/search" role="button">Recommendation Engine</a>
+            </p>
+      
+
+	<footer class="bg-light text-center text-lg-start">
+    
+    <div class="text-center p-3" style="color:hotpink;font-size: larger;background-color: darkgreen;">
+        Pharmalytix:We make meds easy
+      
+    </div>
+   
+  </footer>
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
