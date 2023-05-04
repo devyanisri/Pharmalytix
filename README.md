@@ -2,7 +2,9 @@
 Intelligent Time Series Analysis, Sentiment Analysis and Drug Recommendation
 
 Contributers to the Project:
+
 Ashwathi Subramanian     https://github.com/AshwathiSubramanian13 
+
 https://www.linkedin.com/in/sa-13a8513b13/
  
  Vamsi Gontu             https://github.com/Vamsi2308        
